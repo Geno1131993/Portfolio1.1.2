@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+#header{
+    background-color: rgba(151, 152, 107, 1);
+}
+
+
+
+.image{
+    height: 250px;
+    width: 250px;
+}
