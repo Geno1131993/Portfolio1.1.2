@@ -1,8 +1,11 @@
-/* *{
-    background-color: rgba(0,0,0,0);
-} */
+/*
+    Danielle Smith
+    index.css -- Stylesheet for index.html, contains simple animation for introductory splash.
+*/
 
 
+
+/* Splash box */
 
 #splash{
     height: 100%;
@@ -15,11 +18,12 @@
     display: inline-block;
     margin: 0 auto;
     padding: 400px 0;
-    background: linear-gradient(45deg, rgba(194, 180, 234, 1), rgba(125, 97, 186, 1), rgba(90, 151, 206, 1), rgba(68, 103, 161, 1));
+    background: linear-gradient(45deg, rgba(71, 95, 84, 1), rgba(125, 97, 186, 1), rgba(90, 151, 206, 1), rgba(146, 223, 227, 1));
     animation: gradient 50s ease infinite;
     background-size: 400% 400%;
     margin: auto;
-}
+ }
+
 
 
 @-webkit-keyframes gradient {
@@ -27,6 +31,8 @@
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
+
 
 @keyframes gradient{
     0% {
@@ -38,8 +44,11 @@
 	100% {
 		background-position: 0% 50%;
 	}
-}
+} 
 
+
+
+/* Styling for characters on splash screen */
 
 .character{
     font-size: 50px;
@@ -47,14 +56,15 @@
 
 
 
-
+/* Custom styling for index header */
 
 #header{
-    /* background-color: blue; */
 
 }
 
 
+
+/* Body elements */
 
 body{
     background: url("../images/night_ocean.jpg") repeat 0 0;

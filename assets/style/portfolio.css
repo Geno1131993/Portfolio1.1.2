@@ -6,6 +6,10 @@
 
 #header{
     background-color: rgba(151, 152, 107, 1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
 }
 
 
@@ -13,4 +17,39 @@
 .image{
     height: 250px;
     width: 250px;
+    border-radius: 10px;
 }
+
+
+#container{
+    margin-top: 80px;
+    margin-right: 20px;
+}
+
+
+body{
+    background: url("../images/olympics.jpg") repeat 0 0;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    top: 0;
+    margin: auto;
+}
+
+.repo{
+    margin: 30px;
+    margin-right: 10px;
+} 
+
+
+
+.info{
+    background-color: rgba(242, 225, 169, .85);
+    padding: 25px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+
+

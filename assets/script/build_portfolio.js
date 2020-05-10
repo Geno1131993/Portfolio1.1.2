@@ -2,16 +2,6 @@
 var repos = [];
 
 
-$(".button").on("click", function(){
-    console.log("user clicked a button.");
-});
-
-
-$(".image").on("click", function(){
-    console.log("user clicked an image.");
-});
-
-
 function get_repos(){
     axios
         .get("http://api.github.com/users/Geno1131993/repos")
@@ -37,18 +27,19 @@ function link(repo){
 function build_repo_template(repo){
     let description = repo["description"];
     let name = repo["name"];
+    let url = repo["html_url"];
     let image_name = image();
     return `
     <div class = "tile is-ancestor">
         <div class = "tile is-horizontal is-12">
             <div class = "tile repo ${name}">
-                <div class = "${image_name} sprite tile is-child is-4">
+                <div class = "${image_name} sprite tile is-child is-3">
                     <img src = "${sprites()[image_name]}" class = "image">
                 </div>
-                <div class = "repo tile is-child is-8">
+                <div class = "info tile is-child is-9">
                     <div id = "${name}" class = "repo_name"> ${name} </div>
                     <div id = "${description}" class = "repo_description"> ${description} </div>
-                    <div id = "git" class = "button"> GitHub Repository </div>
+                    <div id = "${url}" class = "button"> GitHub Repository </div>
                  </div>
             </div>
         </div>
@@ -89,3 +80,13 @@ function sprites(){
 get_repos();
 
 
+
+$(".button").on("click", function(){
+    console.log("user clicked a button.");
+    console.log(this);
+});
+
+
+$(".image").on("click", function(){
+    console.log("user clicked an image.");
+});
