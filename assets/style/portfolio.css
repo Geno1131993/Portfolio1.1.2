@@ -46,10 +46,23 @@ body{
 
 .info{
     background-color: rgba(242, 225, 169, .85);
-    padding: 25px;
+    padding: 35px;
     font-size: 20px;
     border-radius: 10px;
 }
 
 
 
+.info_text{
+    margin: 10px;
+   /* margin-left: px; */
+}
+
+.repo_name{
+    font-weight: bold;
+}
+
+
+.link{
+    margin-top: 100px;
+}
