@@ -71,8 +71,6 @@ get_repos();
 
 
 $(document).on("click", ".link", function(){
-    console.log("User clicked a link.");
-    console.log($(this).attr("id"));
     let new_window = window.open($(this).attr("id"), "_blank");
     if(new_window){
         new_window.focus();
@@ -81,3 +79,44 @@ $(document).on("click", ".link", function(){
         alert(`Error opening Github page: ${$(this).attr("id")}`);
     }
 });
+
+
+
+$(document).on("click", "#home", function(){
+    let new_window = window.open("index.html", "_blank");
+    if(new_window){
+        new_window.focus();
+    }
+    else{
+        alert("Error opening new window.");
+    }
+});
+
+
+
+
+
+
+$(document).on("click", "#profile", function(){
+    let new_window = window.open("profile.html", "_blank");
+    if(new_window){
+        new_window.focus();
+    }
+    else{
+        alert("Error opening new window.");
+    }
+});
+
+
+
+
+$(document).on("click", "#contact", function(){
+    let new_window = window.open("contact.html", "_blank");
+    if(new_window){
+        new_window.focus();
+    }
+    else{
+        alert("Error opening new window.");
+    }
+});
+
