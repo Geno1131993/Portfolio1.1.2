@@ -1,16 +1,4 @@
 
-var repos = [];
-
-
-$(".button").on("click", function(){
-    console.log("user clicked a button.");
-});
-
-
-$(".image").on("click", function(){
-    console.log("user clicked an image.");
-});
-
 
 function get_repos(){
     axios
@@ -18,7 +6,6 @@ function get_repos(){
         .then(function(response){
             for(let i = 0; i < response.data.length; i++){
                 repo = response.data[i];
-                repos.push(link(repo));
                 $("#container").append(build_repo_template(repo));
             }
         });
@@ -26,29 +13,22 @@ function get_repos(){
 
 
 
-function link(repo){
-    return {
-        name: repo["name"],
-        url: repo["html_url"]
-    };
-}
-
-
 function build_repo_template(repo){
     let description = repo["description"];
     let name = repo["name"];
+    let url = repo["html_url"];
     let image_name = image();
     return `
     <div class = "tile is-ancestor">
         <div class = "tile is-horizontal is-12">
             <div class = "tile repo ${name}">
-                <div class = "${image_name} sprite tile is-child is-4">
+                <div class = "${image_name} sprite tile is-child is-3">
                     <img src = "${sprites()[image_name]}" class = "image">
                 </div>
-                <div class = "repo tile is-child is-8">
-                    <div id = "${name}" class = "repo_name"> ${name} </div>
-                    <div id = "${description}" class = "repo_description"> ${description} </div>
-                    <div id = "git" class = "button"> GitHub Repository </div>
+                <div class = "info tile is-child is-9">
+                    <div id = "${name}" class = "repo_name info_text"> ${name} </div>
+                    <div id = "${description}" class = "repo_description info_text"> ${description} </div>
+                    <div id = "${url}" class = "button link"> GitHub Repository </div>
                  </div>
             </div>
         </div>
@@ -89,3 +69,15 @@ function sprites(){
 get_repos();
 
 
+
+$(document).on("click", ".link", function(){
+    console.log("User clicked a link.");
+    console.log($(this).attr("id"));
+    let new_window = window.open($(this).attr("id"), "_blank");
+    if(new_window){
+        new_window.focus();
+    }
+    else{
+        alert(`Error opening Github page: ${$(this).attr("id")}`);
+    }
+});

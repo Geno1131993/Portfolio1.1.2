@@ -1,6 +1,4 @@
 
-var repos = [];
-
 
 function get_repos(){
     axios
@@ -8,20 +6,11 @@ function get_repos(){
         .then(function(response){
             for(let i = 0; i < response.data.length; i++){
                 repo = response.data[i];
-                repos.push(link(repo));
                 $("#container").append(build_repo_template(repo));
             }
         });
 }
 
-
-
-function link(repo){
-    return {
-        name: repo["name"],
-        url: repo["html_url"]
-    };
-}
 
 
 function build_repo_template(repo){
@@ -39,7 +28,7 @@ function build_repo_template(repo){
                 <div class = "info tile is-child is-9">
                     <div id = "${name}" class = "repo_name"> ${name} </div>
                     <div id = "${description}" class = "repo_description"> ${description} </div>
-                    <div id = "${url}" class = "button"> GitHub Repository </div>
+                    <div id = "${url}" class = "button link"> GitHub Repository </div>
                  </div>
             </div>
         </div>
@@ -81,12 +70,14 @@ get_repos();
 
 
 
-$(".button").on("click", function(){
-    console.log("user clicked a button.");
-    console.log(this);
-});
-
-
-$(".image").on("click", function(){
-    console.log("user clicked an image.");
+$(document).on("click", ".link", function(){
+    console.log("User clicked a link.");
+    console.log($(this).attr("id"));
+    let new_window = window.open($(this).attr("id"), "_blank");
+    if(new_window){
+        new_window.focus();
+    }
+    else{
+        alert(`Error opening Github page: ${$(this).attr("id")}`);
+    }
 });
