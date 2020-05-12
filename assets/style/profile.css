@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background-image: url("../images/snoqualmie.jpg");
+    background-position-y: -120px;
+    height: 100vh;
+    background-repeat: none;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+.char{
+    /* color: rgba(242, 225, 169, 1); */
+    color: black;
+    opacity: 0;
+}

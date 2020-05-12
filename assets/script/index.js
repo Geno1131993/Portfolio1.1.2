@@ -1,3 +1,9 @@
+/*
+    Danielle Smith
+    index.js -- creates opening splash animation for the home page, and controls the navigation of the buttons.
+*/
+
+
 
 
 const splash_message = "I welcome you".split("");
