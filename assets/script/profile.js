@@ -10,8 +10,8 @@ function hello(){
 
     for(let i = 0; i < hello_message.length; i++){
         let char = hello_message[i];
-        flatten(i);   
-        fade_char(i);
+        //flatten(i);   
+        //fade_char(i);
     }
 
     $("#hello").css("z-index", -1);
@@ -38,7 +38,7 @@ function create_char(char, i){
 
 
 function push_char(id){
-    $("#" + id + "").fadeIn(3000, 100, function(){
+    $("#" + id + "").fadeTo(4000, 100, function(){
         console.log(`Fade ${id}`);
     });
 }
