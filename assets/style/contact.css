@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background-image: url("../images/crater_lake.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+
+
+.tile{
+    background-color: rgba(0,0,0,0);
+    font-size: 18px;
+}
+
+
+
+#name{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+} 
+
+
+
+
+
+#git_avatar{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    border: 3px solid rgba(67, 81, 104, 1);
+}
+
+
+
+
+#avatar{
+    border-radius: 10px;
+    border: 3px solid rgba(67, 81, 104, 1);
+}
+
+
+
+
+#logo{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+
+
+
+#business_card{
+    background-color: rgba(245, 214, 196, .7);
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 275px;
+    border: 5px dashed rgba(117, 104, 87, 1);
+    margin-left: 150px;
+
+}
+
+
+
+
+#card_body{
+    margin: 10px;
+    margin-left: 20px;
+}
+
+
+
+#username{
+    margin: 10px;
+    margin-top: 10px;
+}
+
+
+#repos{
+    margin: 10px;
+    margin-top: 10px;
+}
+
+
+#phone{
+    margin-top: 10px;
+}
+
+
+#email{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+#e1{
+    font-weight: bold;
+}
+
+
+#p1{
+    font-weight: bold;
+}
