@@ -2,7 +2,7 @@
 
 function get_repos(){
     axios
-        .get("http://api.github.com/users/Geno1131993")
+        .get("https://api.github.com/users/Geno1131993")
         .then(function(response){
             response = response.data;
             console.log(response);
